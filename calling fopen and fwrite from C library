@@ -1,0 +1,20 @@
+         mov rcx,name
+         mov rdx,mode
+         call [fopen]
+         mov r10,rax ;fopen return value stored in r10
+
+         mov rcx,buffer
+         mov rdx,1
+         mov r8,6
+         mov r9,r10
+         call [fwrite]
+
+         mov rcx,1
+         call [exit]
+
+
+
+          name db "tooo.txt",0
+          mode db "w",0
+          buffer db '11920x1080',0
+          
